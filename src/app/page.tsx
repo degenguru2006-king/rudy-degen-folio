@@ -346,6 +346,34 @@ export default function Page() {
       }
     }, []);
 
+    const featuredPosts = [
+      {
+        url: "https://x.com/i/status/1947655162107204077",
+        excerpt: "100x he made from this post @ekayakiii Quanttttttt",
+        highlight: "Massive 100x call spotted — pure alpha vibes 🔥"
+      },
+      {
+        url: "https://x.com/i/status/2012121342943092995",
+        excerpt: "AI/tech runners everywhere today. Don’t FOMO yourself into poverty😂 Blind apes get rekt. DYOR or hold the L. WAGMI.",
+        highlight: "Timeless wisdom: DYOR or get rekt — classic Rudy take 📈"
+      },
+      {
+        url: "https://x.com/i/status/2012167748646744178",
+        excerpt: "AI + X play built by @JIMMYEDGAR with @BagsApp integration. $AZY is an AI social network on Solana. Bags founder approved it. Still at a low market cap. Feels like a hidden gem.",
+        highlight: "Hidden Solana AI gem alert — $AZY loading... 💎"
+      },
+      {
+        url: "https://x.com/i/status/2012626564089815436",
+        excerpt: "This Tech looks interesting I grabbed some Let’s see how it goes",
+        highlight: "Rudy aping into fresh tech — watch this space 🚀"
+      },
+      {
+        url: "https://x.com/i/status/2012864100884205618",
+        excerpt: "In a time of myth and legend, a black cat appeared... Long live the King of Cat Flaps 🐾👑 $PEPITO",
+        highlight: "Mythic cat lore + $PEPITO energy — legendary degen post 🐱"
+      },
+    ];
+
     return (
       <motion.section
         className="py-16 sm:py-24 bg-gradient-to-b from-[#0A0D12] to-[#0A0D12]/80 relative overflow-hidden border-t border-[#00F5D4]/20"
@@ -363,7 +391,8 @@ export default function Page() {
             Real-time takes, Solana alpha, and market pulse — straight from the trenches.
           </p>
 
-          <div className="max-w-4xl mx-auto bg-[#0A0D12]/70 backdrop-blur-md border border-[#00F5D4]/20 rounded-2xl p-4 sm:p-6 shadow-2xl shadow-[#00F5D4]/10 overflow-hidden">
+          {/* Twitter Timeline Embed */}
+          <div className="max-w-4xl mx-auto bg-[#0A0D12]/70 backdrop-blur-md border border-[#00F5D4]/20 rounded-2xl p-4 sm:p-6 shadow-2xl shadow-[#00F5D4]/10 overflow-hidden mb-12">
             <a
               className="twitter-timeline"
               href="https://twitter.com/rudyonton_"
@@ -376,7 +405,45 @@ export default function Page() {
             </a>
           </div>
 
-          <div className="mt-10 text-center">
+          {/* Featured Recent Posts - Interactive Cards */}
+          <div className="mt-12">
+            <h3 className="text-3xl sm:text-4xl font-orbitron font-bold bg-gradient-to-r from-[#00F5D4] to-[#9F7AEA] bg-clip-text text-transparent mb-8 text-center">
+              Rudy Latest Alpha Drops
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {featuredPosts.map((post, index) => (
+                <motion.a
+                  key={index}
+                  href={post.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0,245,212,0.6)' }}
+                  className="group bg-[#0A0D12]/60 backdrop-blur-md border border-[#00F5D4]/30 rounded-xl p-6 hover:border-[#00F5D4]/70 transition-all duration-300 overflow-hidden shadow-lg hover:shadow-2xl cursor-pointer"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="text-[#00F5D4] text-3xl group-hover:scale-110 transition-transform">
+                      <Zap />
+                    </div>
+                    <div>
+                      <p className="text-white/90 text-base leading-relaxed mb-2">
+                        {post.excerpt}
+                      </p>
+                      <p className="text-[#00F5D4] text-sm font-medium group-hover:underline">
+                        {post.highlight} →
+                      </p>
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
             <motion.a
               href="https://twitter.com/rudyonton_"
               target="_blank"
@@ -384,7 +451,7 @@ export default function Page() {
               whileHover={{ scale: 1.05 }}
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#00F5D4]/20 to-transparent border border-[#00F5D4]/40 text-[#00F5D4] font-orbitron font-medium text-lg rounded-xl hover:bg-[#00F5D4]/10 hover:border-[#00F5D4]/70 transition-all duration-300"
             >
-              Follow @rudyonton_ for live updates
+              Follow @rudyonton_ for more live updates
               <ArrowUpRight className="ml-2" size={20} />
             </motion.a>
           </div>
