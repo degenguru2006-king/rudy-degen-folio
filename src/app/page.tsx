@@ -202,7 +202,7 @@ export default function Page() {
           <p className="text-xl sm:text-2xl md:text-3xl text-white/90 max-w-5xl mx-auto leading-relaxed font-light">
             Rudy is an investor active in meme markets, AI, and technology. He focuses on early-stage opportunities, on-chain ecosystems, and projects driven by strong communities and real technical execution.
             <br /><br />
-            Rudy also funds degens who has a low portfolio based on our terms and conditions.
+           Rudy also funds degens who have a low portfolio and sharp trading skills based on terms and conditions which will be favorable to both parties
           </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-6 sm:gap-10 text-[#00F5D4]/80">
